@@ -14,7 +14,7 @@ namespace Entities
         public int OrdenId { get; set; }
         public DateTime FechaOrden { get; set; }
         public DateTime FechaEntrega { get; set; }
-        public int ClienteId { get; set; }
+        public int UsuarioId { get; set; }
         public int Cantidad { get; set; }
         public float SubTotal { get; set; }
         public float Itbis { get; set; }
@@ -28,7 +28,7 @@ namespace Entities
             OrdenId = 0;
             FechaOrden = DateTime.Now;
             FechaEntrega = DateTime.Now;
-            ClienteId = 0;
+            UsuarioId = 0;
             Cantidad = 1;
             SubTotal = 0f;
             Itbis = 0f;

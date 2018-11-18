@@ -15,6 +15,7 @@ namespace Entities
         public string Fecha { get; set; }
         public int Cantidad { get; set; }
         public int ProductoId { get; set; }
+        public virtual Producto Producto { get; set; }
 
         public EntradaProducto()
         {
