@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DeepBuy.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Deep Buy</title>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body{
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+    </style>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a href="#" class="navbar-brand">Deep Buy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menu de Navegacion">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="Default.aspx" class="nav-link">Inicio</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="menu-registros" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Registros
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="menu-registros">
+                        <a href="rUsuarios.aspx" class="dropdown-item">Registrar Usuario</a>
+                        <a href="rProductos.aspx" class="dropdown-item">Registrar Producto</a>
+                        <a href="rEntradas.aspx" class="dropdown-item">Registrar Entrada de Producto</a>
+                        <a href="rOrdenes.aspx" class="dropdown-item">Registrar Orden</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="menu-consultas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Consultas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="menu-consultas">
+                        <a href="cUsuarios.aspx" class="dropdown-item">Consultar Usuarios</a>
+                        <a href="cProductos.aspx" class="dropdown-item">Consultar Productos</a>
+                        <a href="cEntradas.aspx" class="dropdown-item">Consultar Entradas de Productos</a>
+                        <a href="cOrdenes.aspx" class="dropdown-item">Consultar Ordenes</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+        <footer class="bg-dark fixed-bottom modal-footer text-light">
+            <p>&copy; <%: DateTime.Now.Year %> - Gianluis González</p>
+        </footer>
+    </div>
+</body>
+</html>
