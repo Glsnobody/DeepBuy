@@ -9,10 +9,12 @@
     <title>Deep Buy</title>
 
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/toastr.min.css" rel="stylesheet" />
+
     <style>
         body{
-            padding-top: 70px;
-            padding-bottom: 70px;
+            padding-top: 90px;
+            padding-bottom: 60px;
         }
     </style>
     
@@ -20,9 +22,11 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/toastr.min.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a href="#" class="navbar-brand">Deep Buy</a>
@@ -57,6 +61,10 @@
                         <a href="cEntradas.aspx" class="dropdown-item">Consultar Entradas de Productos</a>
                         <a href="cOrdenes.aspx" class="dropdown-item">Consultar Ordenes</a>
                     </div>
+                </li>
+
+                <li class="btn btn-danger small">
+                    <a href="Login.aspx" class="nav-link">LogOut</a>
                 </li>
             </ul>
         </div>

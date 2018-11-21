@@ -58,12 +58,12 @@ namespace DeepBuy.UI.Registros
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('No existe')", true);
+                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe');", addScriptTags: true);
                     }
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('Seleccione un ID')", true);
+                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Seleccione un ID');", addScriptTags: true);
                 }
             }
         }
@@ -82,7 +82,7 @@ namespace DeepBuy.UI.Registros
                 if (id == 0)
                 {
                     repositorio.Guardar(LlenaClase());
-                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('Guardado con Exito')", true);
+                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Guardado con Exito');", addScriptTags: true);
                 }
                 else
                 {
@@ -96,17 +96,17 @@ namespace DeepBuy.UI.Registros
 
                         repositorio.Modificar(producto);
 
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('Modificado con Exito')", true);
+                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Modificado con Exito');", addScriptTags: true);
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('No existe una categoria con ese ID, no puede modificarse')", true);
+                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe una categoria con ese ID, no puede modificarse');", addScriptTags: true);
                     }
                 }
             }
             else if (id == 0)
             {
-                ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('Rellene todos los campos')", true);
+                ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Debe rellenar todos los campos');", addScriptTags: true);
             }
             Limpiar();
         }
@@ -121,22 +121,22 @@ namespace DeepBuy.UI.Registros
                 {
                     if (repositorio.Eliminar(id))
                     {
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('Eliminado con Exito')", true);
+                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Eliminado con Exito');", addScriptTags: true);
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('No se pudo eliminar')", true);
+                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No se pudo eliminar');", addScriptTags: true);
                     }
                     Limpiar();
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('No existe')", true);
+                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe');", addScriptTags: true);
                 }
             }
             else
             {
-                ScriptManager.RegisterStartupScript(Page, typeof(Page), "Popup", "alert('Seleccione un ID')", true);
+                ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Seleccione un ID');", addScriptTags: true);
             }
         }
     }

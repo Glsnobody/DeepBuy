@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="container jumbotron">
     <h2 class="h2">Consulta de Productos</h2>
     <hr />
     <form runat="server">
@@ -29,17 +29,23 @@
                 <asp:GridView ID="DatosGridView"
                     runat="server"
                     class="table table-condensed table-bordered table-responsive"
-                    CellPadding="4" ForeColor="#333333" GridLines="None">
+                    CellPadding="4" ForeColor="Black" GridLines="Horizontal" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
 
-                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:HyperLinkField ControlStyle-ForeColor="Black"
                             DataNavigateUrlFields="ProductoId"
                             DataNavigateUrlFormatString="rProductos.aspx?Id={0}">
+<ControlStyle ForeColor="Black"></ControlStyle>
                         </asp:HyperLinkField>
                     </Columns>
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <RowStyle BackColor="#EFF3FB" />
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </div>
         </form>

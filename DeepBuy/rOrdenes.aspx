@@ -32,6 +32,31 @@
                 </div>
             </div>
 
+            <%--GRID--%>
+            <div class="col-md-12">
+                <asp:GridView ID="GridView1"
+                    runat="server"
+                    class="table table-condensed table-bordered table-responsive"
+                    CellPadding="4" ForeColor="Black" GridLines="Horizontal" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
+
+                    <Columns>
+                        <asp:HyperLinkField ControlStyle-ForeColor="Black"
+                            DataNavigateUrlFields="ProductoId"
+                            DataNavigateUrlFormatString="rProductos.aspx?Id={0}">
+                            <ControlStyle ForeColor="Black"></ControlStyle>
+                        </asp:HyperLinkField>
+                    </Columns>
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                </asp:GridView>
+            </div>
+
             <div class="row">
                 <div class="form-group col-lg-4 col-sm-12">
                     <asp:Label runat="server">Cantidad</asp:Label>
@@ -60,13 +85,6 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="form-group col-lg-3 col-md-12">
-                    <br />
-                    <asp:Button ID="CalcularButton" runat="server" CssClass="btn btn-info col-lg-4 col-md-12" Text="Calcular" OnClick="CalcularButton_Click"/>
-                </div>
-            </div>
-
             <%--GRID--%>
             <div class="row">
                 <div class="col-md-6 offset-3">
@@ -87,7 +105,7 @@
 
             <div class="row">
                 <div class="col-lg-5 col-sm-12">
-                    <asp:Button ID="NuevoButtton" runat="server" CssClass="btn btn-success col-lg-3 col-md-12" Text="Nuevo" OnClick="NuevoButton_Click"/>
+                    <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-success col-lg-3 col-md-12" Text="Nuevo" OnClick="NuevoButton_Click"/>
                     <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-warning col-lg-3 col-md-12" Text="Guardar" OnClick="GuardarButton_Click"/>
                     <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-danger col-lg-3 col-md-12" Text="Eliminar" OnClick="EliminarButton_Click"/>
                 </div>

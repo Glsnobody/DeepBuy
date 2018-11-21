@@ -49,6 +49,15 @@ namespace DeepBuy.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox usuarioIdTextbox;
         
         /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
         /// cantidadTextbox control.
         /// </summary>
         /// <remarks>
@@ -85,15 +94,6 @@ namespace DeepBuy.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox tiempoTextbox;
         
         /// <summary>
-        /// CalcularButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CalcularButton;
-        
-        /// <summary>
         /// DatosGridView control.
         /// </summary>
         /// <remarks>
@@ -103,13 +103,13 @@ namespace DeepBuy.UI.Registros {
         protected global::System.Web.UI.WebControls.GridView DatosGridView;
         
         /// <summary>
-        /// NuevoButtton control.
+        /// NuevoButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NuevoButtton;
+        protected global::System.Web.UI.WebControls.Button NuevoButton;
         
         /// <summary>
         /// GuardarButton control.
