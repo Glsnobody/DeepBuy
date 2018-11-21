@@ -12,7 +12,7 @@ namespace Entities
     {
         [Key]
         public int EntradaId { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public int Cantidad { get; set; }
         public int ProductoId { get; set; }
         public virtual Producto Producto { get; set; }
@@ -20,12 +20,12 @@ namespace Entities
         public EntradaProducto()
         {
             EntradaId = 0;
-            Fecha = string.Empty;
+            Fecha = DateTime.Now;
             Cantidad = 0;
             ProductoId = 0;
         }
 
-        public EntradaProducto(int entradaId, string fecha, int cantidad, int productoId)
+        public EntradaProducto(int entradaId, DateTime fecha, int cantidad, int productoId)
         {
             EntradaId = entradaId;
             Fecha = fecha;

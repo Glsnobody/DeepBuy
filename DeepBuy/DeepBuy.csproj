@@ -85,6 +85,14 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="cEntradas.aspx" />
+    <Content Include="cOrdenes.aspx" />
+    <Content Include="cProductos.aspx" />
+    <Content Include="cUsuarios.aspx" />
+    <Content Include="rEntradas.aspx" />
+    <Content Include="rOrdenes.aspx" />
+    <Content Include="rProductos.aspx" />
+    <Content Include="rUsuarios.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
   </ItemGroup>
@@ -108,6 +116,62 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cEntradas.aspx.cs">
+      <DependentUpon>cEntradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cEntradas.aspx.designer.cs">
+      <DependentUpon>cEntradas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cOrdenes.aspx.cs">
+      <DependentUpon>cOrdenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cOrdenes.aspx.designer.cs">
+      <DependentUpon>cOrdenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cProductos.aspx.cs">
+      <DependentUpon>cProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cProductos.aspx.designer.cs">
+      <DependentUpon>cProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cUsuarios.aspx.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cUsuarios.aspx.designer.cs">
+      <DependentUpon>cUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rEntradas.aspx.cs">
+      <DependentUpon>rEntradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rEntradas.aspx.designer.cs">
+      <DependentUpon>rEntradas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rOrdenes.aspx.cs">
+      <DependentUpon>rOrdenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rOrdenes.aspx.designer.cs">
+      <DependentUpon>rOrdenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rProductos.aspx.cs">
+      <DependentUpon>rProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rProductos.aspx.designer.cs">
+      <DependentUpon>rProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rUsuarios.aspx.cs">
+      <DependentUpon>rUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rUsuarios.aspx.designer.cs">
+      <DependentUpon>rUsuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

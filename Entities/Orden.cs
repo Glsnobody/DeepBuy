@@ -13,7 +13,6 @@ namespace Entities
         [Key]
         public int OrdenId { get; set; }
         public DateTime FechaOrden { get; set; }
-        public DateTime FechaEntrega { get; set; }
         public int UsuarioId { get; set; }
         public int Cantidad { get; set; }
         public float SubTotal { get; set; }
@@ -27,7 +26,6 @@ namespace Entities
             this.Detalle = new List<OrdenDetalle>();
             OrdenId = 0;
             FechaOrden = DateTime.Now;
-            FechaEntrega = DateTime.Now;
             UsuarioId = 0;
             Cantidad = 1;
             SubTotal = 0f;
