@@ -22,7 +22,6 @@ namespace DeepBuy.UI.Registros
             nombreTextbox.Text = string.Empty;
             apellidoTextbox.Text = string.Empty;
             emailTextbox.Text = string.Empty;
-            passwordTextbox.Text = string.Empty;
             ordenesTextbox.Text = "0";
         }
 
@@ -32,7 +31,6 @@ namespace DeepBuy.UI.Registros
             nombreTextbox.Text = usuario.Nombre;
             apellidoTextbox.Text = usuario.Apellido;
             emailTextbox.Text = usuario.Email;
-            passwordTextbox.Text = usuario.Password;
             ordenesTextbox.Text = usuario.Ordenes.ToString();
         }
 
@@ -42,7 +40,6 @@ namespace DeepBuy.UI.Registros
             usuario.Nombre = nombreTextbox.Text;
             usuario.Apellido = apellidoTextbox.Text;
             usuario.Email = emailTextbox.Text;
-            usuario.Password = passwordTextbox.Text;
 
             return usuario;
         }
@@ -80,41 +77,44 @@ namespace DeepBuy.UI.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(usuarioIdTextbox.Text);
-            if (!(String.IsNullOrEmpty(nombreTextbox.Text) || String.IsNullOrEmpty(apellidoTextbox.Text) || String.IsNullOrEmpty(emailTextbox.Text) || String.IsNullOrEmpty(passwordTextbox.Text)))
+            if (Page.IsValid)
             {
-                RepositorioBase<Usuario> repositorio = new RepositorioBase<Usuario>();
-                if (id == 0)
+
+                int id = Convert.ToInt32(usuarioIdTextbox.Text);
+                if (!(String.IsNullOrEmpty(nombreTextbox.Text) || String.IsNullOrEmpty(apellidoTextbox.Text) || String.IsNullOrEmpty(emailTextbox.Text)))
                 {
-                    repositorio.Guardar(LlenaClase());
-                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Guardado con Exito');", addScriptTags: true);
-                }
-                else
-                {
-                    if (repositorio.Buscar(id) != null)
+                    RepositorioBase<Usuario> repositorio = new RepositorioBase<Usuario>();
+                    if (id == 0)
                     {
-                        Usuario usuario = repositorio.Buscar(int.Parse(usuarioIdTextbox.Text));
-
-                        usuario.UsuarioId = int.Parse(usuarioIdTextbox.Text);
-                        usuario.Nombre = nombreTextbox.Text;
-                        usuario.Apellido = apellidoTextbox.Text;
-                        usuario.Email = emailTextbox.Text;
-                        usuario.Password = nombreTextbox.Text;
-
-                        repositorio.Modificar(usuario);
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Modificado con Exito');", addScriptTags: true);
+                        repositorio.Guardar(LlenaClase());
+                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Guardado con Exito');", addScriptTags: true);
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe una categoria con ese ID, no puede modificarse');", addScriptTags: true);
+                        if (repositorio.Buscar(id) != null)
+                        {
+                            Usuario usuario = repositorio.Buscar(int.Parse(usuarioIdTextbox.Text));
+
+                            usuario.UsuarioId = int.Parse(usuarioIdTextbox.Text);
+                            usuario.Nombre = nombreTextbox.Text;
+                            usuario.Apellido = apellidoTextbox.Text;
+                            usuario.Email = emailTextbox.Text;
+
+                            repositorio.Modificar(usuario);
+                            ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Modificado con Exito');", addScriptTags: true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe un usuario con ese ID, no puede modificarse');", addScriptTags: true);
+                        }
                     }
                 }
+                else if (id == 0)
+                {
+                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Debe rellenar todos los campos');", addScriptTags: true);
+                }
+                Limpiar();
             }
-            else if (id == 0)
-            {
-                ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Debe rellenar todos los campos');", addScriptTags: true);
-            }
-            Limpiar();
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)

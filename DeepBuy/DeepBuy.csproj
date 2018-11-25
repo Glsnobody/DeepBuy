@@ -87,6 +87,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <None Include="Properties\PublishProfiles\DeepBuy - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\DeepBuy - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
@@ -102,7 +104,9 @@
     <Content Include="rUsuarios.aspx" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>

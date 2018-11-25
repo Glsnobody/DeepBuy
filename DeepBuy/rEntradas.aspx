@@ -23,6 +23,7 @@
                     <asp:Label runat="server">Fecha</asp:Label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="fechaTextbox" TextMode="Date"></asp:TextBox>
                 </div>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ForeColor="Red" ValidationGroup="Guardar" runat="server" CssClass="ErrorMessage" ControlToValidate="fechaTextBox" ErrorMessage="Debe llenar este campo"></asp:RequiredFieldValidator>
             </div>
 
             <div class="row">
@@ -37,12 +38,13 @@
                     <asp:Label runat="server">Cantidad</asp:Label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="cantidadTextbox" Text="0" min="0" TextMode="Number"></asp:TextBox>
                 </div>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" ValidationGroup="Guardar" runat="server" CssClass="ErrorMessage" ControlToValidate="cantidadTextBox" ErrorMessage="Debe llenar este campo"></asp:RequiredFieldValidator>
             </div>
 
             <div class="row">
                 <div class="col-lg-5 col-sm-12">
                     <asp:Button ID="NuevoButton" runat="server" CssClass="btn btn-success col-lg-3 col-md-12" Text="Nuevo" OnClick="NuevoButton_Click"/>
-                    <asp:Button ID="GuardarButton" runat="server" CssClass="btn btn-warning col-lg-3 col-md-12" Text="Guardar" OnClick="GuardarButton_Click"/>
+                    <asp:Button ID="GuardarButton" runat="server" ValidationGroup="Guardar" CssClass="btn btn-warning col-lg-3 col-md-12" Text="Guardar" OnClick="GuardarButton_Click"/>
                     <asp:Button ID="EliminarButton" runat="server" CssClass="btn btn-danger col-lg-3 col-md-12" Text="Eliminar" OnClick="EliminarButton_Click"/>
                 </div>
             </div>

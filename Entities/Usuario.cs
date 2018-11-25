@@ -15,7 +15,6 @@ namespace Entities
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
         public int Ordenes { get; set; }
 
         public Usuario()
@@ -24,17 +23,15 @@ namespace Entities
             Nombre = string.Empty;
             Apellido = string.Empty;
             Email = string.Empty;
-            Password = string.Empty;
             Ordenes = 0;
         }
 
-        public Usuario(int usuarioId, string nombre, string apellido, string email, string password, int ordenes)
+        public Usuario(int usuarioId, string nombre, string apellido, string email, int ordenes)
         {
             UsuarioId = usuarioId;
             Nombre = nombre;
             Apellido = apellido;
             Email = email;
-            Password = password;
             Ordenes = ordenes;
         }
     }

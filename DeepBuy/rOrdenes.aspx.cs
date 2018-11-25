@@ -16,8 +16,8 @@ namespace DeepBuy.UI.Registros
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DatosGridView.Visible = true;
-            DatosGridView.DataBind();
+            DataGridView.Visible = true;
+            DataGridView.DataBind();
         }
 
         void Limpiar()

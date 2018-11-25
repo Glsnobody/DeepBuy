@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="container jumbotron">
         <h2 class="h2">Registro de Ordenes</h2>
         <hr />
         <form runat="server">
@@ -34,7 +34,7 @@
 
             <%--GRID--%>
             <div class="col-md-12">
-                <asp:GridView ID="GridView1"
+                <asp:GridView ID="DataGridView"
                     runat="server"
                     class="table table-condensed table-bordered table-responsive"
                     CellPadding="4" ForeColor="Black" GridLines="Horizontal" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
@@ -59,29 +59,8 @@
 
             <div class="row">
                 <div class="form-group col-lg-4 col-sm-12">
-                    <asp:Label runat="server">Cantidad</asp:Label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="cantidadTextbox" Text="0" min="0" TextMode="Number"></asp:TextBox>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-lg-4 col-sm-12">
-                    <asp:Label runat="server">Capital</asp:Label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="capitalTextbox" Text="0" min="0"></asp:TextBox>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-lg-4 col-sm-12">
-                    <asp:Label runat="server">Interes</asp:Label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="interesTextbox" Text="0" min="0"></asp:TextBox>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-lg-4 col-sm-12">
-                    <asp:Label runat="server">Tiempo</asp:Label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="tiempoTextbox" Text="0" min="0"></asp:TextBox>
+                    <asp:Label runat="server">Total</asp:Label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="totalTextbox" Text="0" min="0"></asp:TextBox>
                 </div>
             </div>
 

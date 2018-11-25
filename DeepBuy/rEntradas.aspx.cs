@@ -20,7 +20,7 @@ namespace DeepBuy.UI.Registros
         {
             entradaIdTextbox.Text = "0";
             fechaTextbox.Text = string.Empty;
-            productoIdTextbox.Text = "0";
+            productoIdTextbox.Text = "1";
             cantidadTextbox.Text = "0";
         }
 
@@ -75,40 +75,44 @@ namespace DeepBuy.UI.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(entradaIdTextbox.Text);
-            if (!(productoIdTextbox.Text == "0" || cantidadTextbox.Text == "0" || String.IsNullOrEmpty(fechaTextbox.Text)))
+            if (Page.IsValid)
             {
-                RepositorioEntrada repositorio = new RepositorioEntrada();
-                if (id == 0)
+                int id = Convert.ToInt32(entradaIdTextbox.Text);
+                if (!(productoIdTextbox.Text == "0" || cantidadTextbox.Text == "0" || String.IsNullOrEmpty(fechaTextbox.Text)))
                 {
-                    repositorio.Guardar(LlenaClase());
-                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Guardado con Exito');", addScriptTags: true);
-                }
-                else
-                {
-                    if (repositorio.Buscar(id) != null)
+                    RepositorioEntrada repositorio = new RepositorioEntrada();
+                    RepositorioBase<Producto> repositorioBase = new RepositorioBase<Producto>();
+                    if (id == 0 && repositorioBase.Buscar(int.Parse(productoIdTextbox.Text)) != null)
                     {
-                        EntradaProducto entrada = repositorio.Buscar(int.Parse(entradaIdTextbox.Text));
-
-                        entrada.ProductoId = int.Parse(entradaIdTextbox.Text);
-                        entrada.Fecha = DateTime.Parse(fechaTextbox.Text);
-                        entrada.Cantidad = int.Parse(cantidadTextbox.Text);
-
-                        repositorio.Modificar(entrada);
-
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Modificado con Exito');", addScriptTags: true);
-                }
+                        repositorio.Guardar(LlenaClase());
+                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Guardado con Exito');", addScriptTags: true);
+                    }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe una categoria con ese ID, no puede modificarse');", addScriptTags: true);
+                        if (repositorio.Buscar(id) != null && repositorioBase.Buscar(int.Parse(productoIdTextbox.Text)) != null)
+                        {
+                            EntradaProducto entrada = repositorio.Buscar(int.Parse(entradaIdTextbox.Text));
+
+                            entrada.ProductoId = int.Parse(entradaIdTextbox.Text);
+                            entrada.Fecha = DateTime.Parse(fechaTextbox.Text);
+                            entrada.Cantidad = int.Parse(cantidadTextbox.Text);
+
+                            repositorio.Modificar(entrada);
+
+                            ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Modificado con Exito');", addScriptTags: true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe una entrada o un producto con ese ID, no puede modificarse');", addScriptTags: true);
+                        }
                     }
                 }
+                else if (id == 0)
+                {
+                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Debe rellenar todos los campos');", addScriptTags: true);
+                }
+                Limpiar();
             }
-            else if (id == 0)
-            {
-                ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Debe rellenar todos los campos');", addScriptTags: true);
-            }
-            Limpiar();
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)

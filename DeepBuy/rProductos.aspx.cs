@@ -75,40 +75,43 @@ namespace DeepBuy.UI.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(productoIdTextbox.Text);
-            if (!(String.IsNullOrEmpty(descripcionTextbox.Text) || String.IsNullOrEmpty(precioTextbox.Text) || String.IsNullOrEmpty(inventarioTextbox.Text)))
+            if (Page.IsValid)
             {
-                RepositorioBase<Producto> repositorio = new RepositorioBase<Producto>();
-                if (id == 0)
+                int id = Convert.ToInt32(productoIdTextbox.Text);
+                if (!(String.IsNullOrEmpty(descripcionTextbox.Text) || String.IsNullOrEmpty(precioTextbox.Text) || String.IsNullOrEmpty(inventarioTextbox.Text)))
                 {
-                    repositorio.Guardar(LlenaClase());
-                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Guardado con Exito');", addScriptTags: true);
-                }
-                else
-                {
-                    if (repositorio.Buscar(id) != null)
+                    RepositorioBase<Producto> repositorio = new RepositorioBase<Producto>();
+                    if (id == 0)
                     {
-                        Producto producto = repositorio.Buscar(int.Parse(productoIdTextbox.Text));
-
-                        producto.ProductoId = int.Parse(productoIdTextbox.Text);
-                        producto.Descripcion = descripcionTextbox.Text;
-                        producto.Precio = float.Parse(precioTextbox.Text);
-
-                        repositorio.Modificar(producto);
-
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Modificado con Exito');", addScriptTags: true);
+                        repositorio.Guardar(LlenaClase());
+                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Guardado con Exito');", addScriptTags: true);
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe una categoria con ese ID, no puede modificarse');", addScriptTags: true);
+                        if (repositorio.Buscar(id) != null)
+                        {
+                            Producto producto = repositorio.Buscar(int.Parse(productoIdTextbox.Text));
+
+                            producto.ProductoId = int.Parse(productoIdTextbox.Text);
+                            producto.Descripcion = descripcionTextbox.Text;
+                            producto.Precio = float.Parse(precioTextbox.Text);
+
+                            repositorio.Modificar(producto);
+
+                            ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['success']('Modificado con Exito');", addScriptTags: true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['error']('No existe un producto con ese ID, no puede modificarse');", addScriptTags: true);
+                        }
                     }
                 }
+                else if (id == 0)
+                {
+                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Debe rellenar todos los campos');", addScriptTags: true);
+                }
+                Limpiar();
             }
-            else if (id == 0)
-            {
-                ScriptManager.RegisterStartupScript(Page, typeof(Page), "toastr_message", script: "toastr['warning']('Debe rellenar todos los campos');", addScriptTags: true);
-            }
-            Limpiar();
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)

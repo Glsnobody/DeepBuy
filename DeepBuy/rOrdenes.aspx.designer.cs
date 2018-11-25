@@ -49,49 +49,22 @@ namespace DeepBuy.UI.Registros {
         protected global::System.Web.UI.WebControls.TextBox usuarioIdTextbox;
         
         /// <summary>
-        /// GridView1 control.
+        /// DataGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView DataGridView;
         
         /// <summary>
-        /// cantidadTextbox control.
+        /// totalTextbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cantidadTextbox;
-        
-        /// <summary>
-        /// capitalTextbox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox capitalTextbox;
-        
-        /// <summary>
-        /// interesTextbox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox interesTextbox;
-        
-        /// <summary>
-        /// tiempoTextbox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tiempoTextbox;
+        protected global::System.Web.UI.WebControls.TextBox totalTextbox;
         
         /// <summary>
         /// DatosGridView control.

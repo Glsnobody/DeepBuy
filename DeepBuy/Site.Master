@@ -63,7 +63,7 @@
                     </div>
                 </li>
 
-                <li class="btn btn-danger small">
+                <li class="btn btn-danger">
                     <a href="Login.aspx" class="nav-link">LogOut</a>
                 </li>
             </ul>
