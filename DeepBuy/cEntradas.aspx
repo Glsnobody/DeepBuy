@@ -5,7 +5,7 @@
     <div class="container jumbotron">
         <h2 class="h2">Consulta de Entradas de Productos</h2>
         <hr />
-        <form runat="server">
+        <div runat="server">
             <div class="row" >
                 <div class="col-md-2">
                     <asp:DropDownList ID="BuscarPorDropDownList" runat="server" CssClass="form-control input-sm" >
@@ -47,6 +47,6 @@
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </div>
-        </form>
+        </div>
 </div>
 </asp:Content>

@@ -5,7 +5,7 @@
     <div class="container jumbotron">
         <h2 class="h2">Registro de Productos</h2>
         <hr />
-        <form runat="server">
+        <div runat="server">
 
             <div class="row">
                 <div class="form-group col-lg-3 col-sm-12">
@@ -50,6 +50,6 @@
                 </div>
             </div>
 
-        </form>
+        </div>
     </div>
 </asp:Content>

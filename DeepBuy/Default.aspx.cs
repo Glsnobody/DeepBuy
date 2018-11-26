@@ -13,5 +13,10 @@ namespace DeepBuy
         {
 
         }
+
+        protected void LogOutButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
